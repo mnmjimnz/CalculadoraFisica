@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calculadoras en Secciones</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">Calculadoras Para Fisica</h1>
+        <!-- Dinamica de Fluidos -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="card-title text-center">Calculadora de Presion con Dinamica de Fluidos</h2>
+                <div class="row mb-3">
+                    <div class="col-sm-3 mb-3">
+                        <label>Densidad del fluido</label>
+                        <input type="text" class="form-control" id="densidadFluido" />
+                    </div>
+                    <div class="col-sm-3 mb-3">
+                        <label>Altura 1</label>
+                        <input type="text" class="form-control" id="altura1" />
+                    </div>
+                    <div class="col-sm-3 mb-3">
+                        <label>Velocidad 1</label>
+                        <input type="text" class="form-control" id="velocidad1" />
+                    </div>
+                    <div class="col-sm-3 mb-3">
+                        <label>Altura 2</label>
+                        <input type="text" class="form-control" id="altura2" />
+                    </div>
+                    <div class="col-sm-3 mb-3">
+                        <label>Velocidad 2</label>
+                        <input type="text" class="form-control" id="velocidad2" />
+                    </div>
+                    <div class="col-sm-3 mb-3">
+                        <label>Presion(opcional)</label>
+                        <input type="text" class="form-control" id="Presion" />
+                    </div>
+                    <div class="col-sm-3 mb-3">
+                        <label>Resultado Buscado</label>
+                        <select class="form-control" id="resultadoBuscado">
+                            <option value="1">Obtener Presion 1</option>
+                            <option value="2">Obtener Presion 2</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3 mb-3">
+                        <br />
+                        <button type="button" class="btn btn-info"
+                            onclick="CalculadoraDinamicaDeFluidos()">Calcular</button>
+                    </div>
+                    <div class="col-sm-3 mb-3">
+                        <label>Resultado</label>
+                        <p id="resultadoDinamicaFluidos"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección 3: Cálculo de Área de un Círculo -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="card-title text-center">Ecuacion de Continuidad con tubos</h2>
+                <div class="row mb-3">
+                    <div class="col-sm-3 mb-3">
+                        <label>Radio 1</label>
+                        <input type="text" class="form-control" id="Radio1" />
+                    </div>
+                    <div class="col-sm-3 mb-3">
+                        <label>Radio 2</label>
+                        <input type="text" class="form-control" id="Radio2" />
+                    </div>
+                    <div class="col-sm-3 mb-3">
+                        <label>Velocidad 1</label>
+                        <input type="text" class="form-control" id="Velocidad1" />
+                    </div>
+                    <div class="col-sm-3 mb-3">
+                        <label>Velocidad 2</label>
+                        <input type="text" class="form-control" id="Velocidad2" />
+                    </div>
+                    <div class="col-sm-3 mb-3">
+                        <label>Valor a encontrar</label>
+                        <select class="form-control" id="valorBuscadoEcuacionContinuidad">
+                            <option value="1">Encontrar Radio 1</option>
+                            <option value="2">Encontrar Radio 2</option>
+                            <option value="3">Encontrar Velocidad 1</option>
+                            <option value="4">Encontrar Velocidad 2</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3 mb-3">
+                        <br />
+                        <button type="button" class="btn btn-info"
+                            onclick="EcuacionDecontinuidad()">Convertir</button>
+                    </div>
+                    <div class="col-sm-6 mb-3">
+                        <label>Resultado</label>
+                        <p id="resultadoEcuacionContinuidad"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Conversor de Temperaturas C°, F° y K -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="card-title text-center">Conversor de Temperaturas C°, F° y K</h2>
+                <div class="row">
+                    <div class="col-sm-3 mb-3">
+                        <label>Grados</label>
+                        <input type="text" class="form-control" id="grados" />
+                    </div>
+                    <div class="col-sm-3 mb-3">
+                        <label>Tipo a convertir</label>
+                        <select class="form-control" id="tipoconversion">
+                            <option value="1">Convertir a Celsius</option>
+                            <option value="2">Convertir a Farenheit</option>
+                            <option value="3">Convertir a Kelvin</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3 mb-3">
+                        <br />
+                        <button type="button" class="btn btn-info"
+                            onclick="TermodinamicaCalculoTemperatura()">Convertir</button>
+                    </div>
+                    <div class="col-sm-3 mb-3">
+                        <label>Resultado</label>
+                        <p id="resultadoConversion"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function CalculadoraDinamicaDeFluidos() {
+            let Densida = Number($("#densidadFluido").val());
+            let altura1 = Number($("#altura1").val());
+            let altura2 = Number($("#altura2").val());
+            let Velocidad1 = Number($("#velocidad1").val());
+            let Velocidad2 = Number($("#velocidad2").val());
+            let Presion = Number($("#Presion").val());
+            let ResultadoBuscado = Number($("#resultadoBuscado").val());
+            let gravedad = 9.8;
+            let resultado = 0;
+            let PresionAtmosferica = 1.013 * (10 * 10 * 10 * 10 * 10);
+            switch (ResultadoBuscado) {
+                case 1:
+                    if (Densida > 0 && Velocidad1 > 0 && altura1 >= 0) {
+                        if (Presion > 0) {
+                            PresionAtmosferica = Presion;
+                        }
+                        let resultado_ecucacion2 = Densida * gravedad * altura2;
+                        let ecuacion2 = 0;
+                        if (resultado_ecucacion2 > 0) {
+                            ecuacion2 = resultado_ecucacion2 + PresionAtmosferica;
+                        }
+                        else {
+                            ecuacion2 = PresionAtmosferica;
+                        }
+                        let resultado_izquierda = (Densida * gravedad * altura1) + (0.5 * Densida * (Velocidad1 * Velocidad1));
+                        let resultado_derecha = ecuacion2 + (0.5 * Densida * (Velocidad2 * Velocidad2));
+                        resultado = resultado_derecha - resultado_izquierda;
+                    }
+                    break;
+                case 2:
+                    if (Densida > 0 && Velocidad2 > 0 && altura2 >= 0) {
+                        if (Presion > 0) {
+                            PresionAtmosferica = Presion;
+                        }
+                        let resultado_ecucacion1 = Densida * gravedad * altura1;
+                        let ecuacion1 = 0;
+                        if (resultado_ecucacion1 > 0) {
+                            ecuacion1 = resultado_ecucacion1 + PresionAtmosferica;
+                        }
+                        else {
+                            ecuacion1 = PresionAtmosferica;
+                        }
+                        let resultado_izquierda = ecuacion1 + (0.5 * Densida * (Velocidad1 * Velocidad1));
+                        let resultado_derecha = (Densida * gravedad * altura2) + (0.5 * Densida * (Velocidad2 * Velocidad2));
+                        resultado = resultado_izquierda - resultado_derecha;
+                    }
+                    break;
+            }
+            $("#resultadoDinamicaFluidos").text(`${resultado} Pascales o ${Number(resultado / 1000)} Kilo Pascales`);
+        }
+        function EcuacionDecontinuidad() {
+            let Radio1 = Number($("#Radio1").val());
+            let Radio2 = Number($("#Radio2").val());
+            let Velocidad1 = Number($("#Velocidad1").val());
+            let Velocidad2 = Number($("#Velocidad2").val());
+            let valor_a_Encontrar = Number($("#valorBuscadoEcuacionContinuidad").val());
+            let resultado = 0;
+            let respuesta = "";
+            switch (valor_a_Encontrar) {
+                case 1:
+                    //encontrar radio1
+                    resultado = ((Radio2 * Radio2) * Velocidad2) / Velocidad1;
+                    respuesta = `El valor del radio 1 es: ${resultado}`;
+                    break;
+                case 2:
+                    //encontrar radio2
+                    resultado = ((Radio1 * Radio1) * Velocidad1) / Velocidad2;
+                    respuesta = `El valor del radio 2 es: ${resultado}`;
+                    break;
+                case 3:
+                    resultado = (Radio2 * Radio2) * Velocidad2 / (Radio1 * Radio1);
+                    respuesta = `El valor de la velocidad 1 es: ${resultado} metros / segundos`;
+                    //encontrar velocidad1
+                    break;
+                case 4:
+                    resultado = (Radio1 * Radio1) * Velocidad1 / (Radio2 * Radio2);
+                    respuesta = `El valor de la velocidad 2 es: ${resultado} metros / segundos`;
+                    //encontrar velocidad2
+                    break;
+            }
+            $("#resultadoEcuacionContinuidad").text(respuesta);
+        }
+        function TermodinamicaCalculoTemperatura() {
+            let medida = "";
+            let gradosAConvertir = Number($("#grados").val());
+            let resultado = 0;
+            let valueTipo = parseInt($("#tipoconversion").val());
+            switch (valueTipo) {
+                case 1:
+                    resultado = 0.55 * (gradosAConvertir - 32); medida = "Celsius";
+                    break;
+                case 2:
+                    resultado = 1.8 * gradosAConvertir + 32; medida = "Farenheit";
+                    break;
+                case 3:
+                    resultado = gradosAConvertir + 273.15; medida = "Kelvin";
+                    break;
+            }
+            $("#resultadoConversion").text(`El resultado de la conversion es ${parseFloat(resultado).toFixed(2)}° ${medida}`);
+        }
+    </script>
+</body>
+
+</html>
