@@ -52,7 +52,9 @@
                     <div class="col-sm-3 mb-3">
                         <br />
                         <button type="button" class="btn btn-info"
-                            onclick="CalculadoraDinamicaDeFluidos()">Calcular</button>
+                                onclick="CalculadoraDinamicaDeFluidos()">
+                            Calcular
+                        </button>
                     </div>
                     <div class="col-sm-3 mb-3">
                         <label>Resultado</label>
@@ -61,7 +63,32 @@
                 </div>
             </div>
         </div>
-
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="card-title text-center">Calcular Caudal</h2>
+                <div class="row">
+                    <div class="col-sm-3 mb-3">
+                        <label>Radio</label>
+                        <input type="text" class="form-control" id="RadioCaudal" />
+                    </div>
+                    <div class="col-sm-3 mb-3">
+                        <label>Velocidad del Caudal</label>
+                        <input type="text" class="form-control" id="VelocidadCaudal" />
+                    </div>
+                    <div class="col-sm-3 mb-3">
+                        <br />
+                        <button type="button" class="btn btn-info"
+                                onclick="CaudalTubos()">
+                            Calcular
+                        </button>
+                    </div>
+                    <div class="col-sm-3 mb-3">
+                        <label>Resultado</label>
+                        <p id="resultadoCaudal"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- Sección 3: Cálculo de Área de un Círculo -->
         <div class="card mb-4">
             <div class="card-body">
@@ -95,7 +122,9 @@
                     <div class="col-sm-3 mb-3">
                         <br />
                         <button type="button" class="btn btn-info"
-                            onclick="EcuacionDecontinuidad()">Convertir</button>
+                                onclick="EcuacionDecontinuidad()">
+                            Convertir
+                        </button>
                     </div>
                     <div class="col-sm-6 mb-3">
                         <label>Resultado</label>
@@ -104,6 +133,7 @@
                 </div>
             </div>
         </div>
+
         <!-- Conversor de Temperaturas C°, F° y K -->
         <div class="card mb-4">
             <div class="card-body">
@@ -124,7 +154,9 @@
                     <div class="col-sm-3 mb-3">
                         <br />
                         <button type="button" class="btn btn-info"
-                            onclick="TermodinamicaCalculoTemperatura()">Convertir</button>
+                                onclick="TermodinamicaCalculoTemperatura()">
+                            Convertir
+                        </button>
                     </div>
                     <div class="col-sm-3 mb-3">
                         <label>Resultado</label>
@@ -219,6 +251,12 @@
                     break;
             }
             $("#resultadoEcuacionContinuidad").text(respuesta);
+        }
+        function CaudalTubos() {
+            let Radio = Number($("#RadioCaudal").val());
+            let Velocidad = Number($("#VelocidadCaudal").val());
+            let resultado = 3.14 * (Radio * Radio) * Velocidad;
+            $("#resultadoCaudal").text(`El valor del caudal es: ${resultado} metros cubicos/segundos`);
         }
         function TermodinamicaCalculoTemperatura() {
             let medida = "";
