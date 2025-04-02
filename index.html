@@ -294,7 +294,7 @@
                             }
                             let resultado_izquierda = (Densida * gravedad * altura1) + (0.5 * Densida * (Velocidad1 * Velocidad1));
                             let resultado_derecha = ecuacion2 + (0.5 * Densida * (Velocidad2 * Velocidad2));
-                            resultado = resultado_derecha - resultado_izquierda;
+                            resultado = Number(resultado_derecha - resultado_izquierda).toFixed(2);
                         }
                         break;
                     case 2:
@@ -312,7 +312,7 @@
                             }
                             let resultado_izquierda = ecuacion1 + (0.5 * Densida * (Velocidad1 * Velocidad1));
                             let resultado_derecha = (Densida * gravedad * altura2) + (0.5 * Densida * (Velocidad2 * Velocidad2));
-                            resultado = resultado_izquierda - resultado_derecha;
+                            resultado = Number(resultado_izquierda - resultado_derecha).toFixed(2);
                         }
                         break;
                 }
