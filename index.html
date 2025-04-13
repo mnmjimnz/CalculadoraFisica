@@ -76,46 +76,46 @@
                     </div>
                 </div>
                 <!--<div class="row mb-3">
-                <div class="col-sm-4 mb-3">
-                    <div class="row">
-                        <div class="col-2"><h1><strong>P1</strong></h1></div>
-                        <div class="col-1"><h1>+</h1></div>
-                        <div class="col-1"><h1><strong><math><mfrac><mn>1</mn><mn>2</mn></mfrac></math></strong></h1></div>
+                    <div class="col-sm-4 mb-3">
+                        <div class="row">
+                            <div class="col-2"><h1><strong>P1</strong></h1></div>
+                            <div class="col-1"><h1>+</h1></div>
+                            <div class="col-1"><h1><strong><math><mfrac><mn>1</mn><mn>2</mn></mfrac></math></strong></h1></div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-2 mb-3">
-                    <label>Densidad del fluido<strong>(ρ)</strong></label>
-                    <input type="text" class="form-control" id="densidadFluido" />
-                </div>
-                <div class="col-sm-2 mb-3">
-                    <label>Altura<sub>1</sub><strong>(h<sub>1</sub>)</strong></label>
-                    <input type="text" class="form-control" id="altura1" />
-                </div>
-                <div class="col-sm-2 mb-3">
-                    <label>Velocidad<sub>1</sub><strong>(v<sub>1</sub><sup>2</sup>)</strong></label>
-                    <input type="text" class="form-control" id="velocidad1" />
-                </div>
-                <div class="col-sm-2 mb-3">
-                    <label>Altura<sub>2</sub><strong>(h<sub>2</sub>)</strong> </label>
-                    <input type="text" class="form-control" id="altura2" />
-                </div>
-                <div class="col-sm-2 mb-3">
-                    <label>Velocidad 2 <strong>(v<sub>2</sub><sup>2</sup>)</strong></label>
-                    <input type="text" class="form-control" id="velocidad2" />
-                </div>
-                <div class="col-sm-2 mb-3">
-                    <label>Presion(opcional)<strong>(P<sub>1</sub> o P<sub>2</sub>)</strong></label>
-                    <input type="text" class="form-control" id="Presion" />
-                </div>
-                <div class="col-sm-2 mb-3">
-                    <label>Resultado Buscado</label>
-                    <select class="form-control" id="resultadoBuscado">
-                        <option value="1">Obtener Presion 1</option>
-                        <option value="2">Obtener Presion 2</option>
-                    </select>
-                </div>
+                    <div class="col-sm-2 mb-3">
+                        <label>Densidad del fluido<strong>(ρ)</strong></label>
+                        <input type="text" class="form-control" id="densidadFluido" />
+                    </div>
+                    <div class="col-sm-2 mb-3">
+                        <label>Altura<sub>1</sub><strong>(h<sub>1</sub>)</strong></label>
+                        <input type="text" class="form-control" id="altura1" />
+                    </div>
+                    <div class="col-sm-2 mb-3">
+                        <label>Velocidad<sub>1</sub><strong>(v<sub>1</sub><sup>2</sup>)</strong></label>
+                        <input type="text" class="form-control" id="velocidad1" />
+                    </div>
+                    <div class="col-sm-2 mb-3">
+                        <label>Altura<sub>2</sub><strong>(h<sub>2</sub>)</strong> </label>
+                        <input type="text" class="form-control" id="altura2" />
+                    </div>
+                    <div class="col-sm-2 mb-3">
+                        <label>Velocidad 2 <strong>(v<sub>2</sub><sup>2</sup>)</strong></label>
+                        <input type="text" class="form-control" id="velocidad2" />
+                    </div>
+                    <div class="col-sm-2 mb-3">
+                        <label>Presion(opcional)<strong>(P<sub>1</sub> o P<sub>2</sub>)</strong></label>
+                        <input type="text" class="form-control" id="Presion" />
+                    </div>
+                    <div class="col-sm-2 mb-3">
+                        <label>Resultado Buscado</label>
+                        <select class="form-control" id="resultadoBuscado">
+                            <option value="1">Obtener Presion 1</option>
+                            <option value="2">Obtener Presion 2</option>
+                        </select>
+                    </div>
 
-            </div>-->
+                </div>-->
             </div>
         </div>
         <div class="card mb-4">
@@ -247,14 +247,70 @@
                 </div>
             </div>
         </div>
+        <!-- Calculo de areas-->
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="card-title text-center">Calculo de area</h2>
+                <div class="row">
+                    <div class="col-sm-3 mb-3">
+                        <label>Area a calcular</label>
+                        <select class="form-control" id="tipoarea" onchange="mostrarAreaSeleccionada()">
+                            <option value="1">Cuadrado</option>
+                            <option value="2">Rectangulo</option>
+                            <option value="3">Triangulo</option>
+                            <option value="4">Circulo</option>
+                        </select>
+                    </div>
+                    <div class="row" id="div_areacuadrado">
+                        <h4>Area del cuadrado</h4>
+                        <div class="col-sm-3 mb-3">
+                            <label>Lado del cuadrado</label>
+                            <input type="text" id="ladoCuadrado" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row" style="display: none;" id="div_arearectangulo">
+                        <h4 id="tittle_rectangulo_triangulo">Area del rectangulo</h4>
+                        <div class="col-sm-3 mb-3">
+                            <label>Base</label>
+                            <input type="text" id="base" class="form-control" />
+                        </div>
+                        <div class="col-sm-3 mb-3">
+                            <label>Altura</label>
+                            <input type="text" id="altura" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row" style="display: none;" id="div_areacirculo">
+                        <h4>Area del circulo</h4>
+                        <div class="col-sm-3 mb-3">
+                            <label>Radio</label>
+                            <input type="text" id="radio_area" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        Resultado: <strong id="resultadoArea"></strong>
+                        <div class="col-sm-3 mb-3">
+                            <button type="button" class="btn btn-info" onclick="calculararea()">Calcular area</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- DilatacionLineal_DeformacionLineal-->
         <div class="card mb-4">
             <div class="card-body">
-                <h2 class="card-title text-center">Deformacion Lineal</h2>
+                <h2 class="card-title text-center">Deformacion Lineal, Superfical y Volumetrica</h2>
                 <div class="row">
                     <div class="col-sm-3 mb-3">
-                        <label>Longitud Inicial</label>
+                        <label>Longitud Inicial <strong style="color:red">(Para deformacion lineal)</strong></label>
                         <input type="text" class="form-control" id="longitudinicial" />
+                    </div>
+                    <div class="col-sm-3 mb-3">
+                        <label>Area Inicial <strong style="color:red">(Para deformacion superficial)</strong></label>
+                        <input type="text" class="form-control" id="areainicial" />
+                    </div>
+                    <div class="col-sm-3 mb-3">
+                        <label>Volumen Inicial <strong style="color:red">(Para deformacion volumetrica)</strong></label>
+                        <input type="text" class="form-control" id="volumeninicial" />
                     </div>
                     <div class="col-sm-3 mb-3">
                         <label>Variacion de Temperatura</label>
@@ -273,6 +329,7 @@
                             <option value="11e-6">Acero (11 × 10⁻⁶)</option>
                             <option value="0.9e-6">Invar (aleación Ni–Fe) (0.9 × 10⁻⁶)</option>
                             <option value="12e-6">Concreto (12 × 10⁻⁶)</option>
+                            <option value="35.1e-6">Hierro (35.1 × 10⁻⁶)</option>
 
                             <!-- Materiales líquidos y gases -->
                             <option value="1.12e-4">Alcohol etílico (1.12 × 10⁻⁴)</option>
@@ -284,25 +341,39 @@
                             <option value="9.6e-4">Gasolina (9.6 × 10⁻⁴)</option>
                             <option value="3.67e-3">Aire a 0°C (3.67 × 10⁻³)</option>
                             <option value="3.665e-3">Helio (3.665 × 10⁻³)</option>
+                            <option value="895e-6">Petroleo (895 × 10⁻⁶)</option>
                         </select>
                     </div>
                     <div class="col-sm-3 mb-3">
-                        <br />
-                        <button type="button" class="btn btn-info"
-                                onclick="DilatacionLineal_DeformacionLineal()">
-                            Calcular Deformacion Lineal
-                        </button>
-                    </div>
-                    <div class="col-sm-3 mb-3">
-                        <br />
-                        <button type="button" class="btn btn-info"
-                                onclick="DilatacionLineal_LongitudFinalPorDeformacionLineal()">
-                            Calcular Longitud Final por Deformacion Lineal
-                        </button>
+                        <label>Coeficiente Volumetrico es liquido?</label>
+                        <select class="form-control" id="coeficiente_es_liquido">
+                            <option value="True">SI</option>
+                            <option value="False">NO</option>
+                        </select>
                     </div>
                     <div class="col-sm-3 mb-3">
                         <label>Resultado</label>
                         <p id="resultado_deformacionlineal"></p>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="btn-group" role="group" aria-label="Grupo de botones">
+                            <button type="button" class="btn btn-info"
+                                    onclick="DilatacionLineal_DeformacionLineal()">
+                                Calcular Deformacion Lineal
+                            </button>
+                            <button type="button" class="btn btn-info"
+                                    onclick="DilatacionLineal_LongitudFinalPorDeformacionLineal()">
+                                Calcular Longitud Final por Deformacion Lineal
+                            </button>
+                            <button type="button" class="btn btn-info"
+                                    onclick="DilatacionSuperficial()">
+                                Calcular Dilatacion Superficial
+                            </button>
+                            <button type="button" class="btn btn-info"
+                                    onclick="DilatacionVolumetrica_volumenfinaldilatado()">
+                                Calcular Dilatacion Volumetrica
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -478,18 +549,121 @@
             $("#resultado_variaciontemperatura").text(variaciontemperatura.toFixed(4));
         }
         function DilatacionLineal_DeformacionLineal() {
-            let coeficiente_expasion_termica = Number($("#cofexpansiontermica").val());
+
             let longitud_inicial = Number($("#longitudinicial").val());
-            let variaciontemperatura = Number($("#variaciontemperatura").val());
-            let deformacionlineal = coeficiente_expasion_termica * longitud_inicial * variaciontemperatura;
-            $("#resultado_deformacionlineal").text(deformacionlineal.toFixed(4));
+            if (longitud_inicial > 0) {
+                let coeficiente_expasion_termica = Number($("#cofexpansiontermica").val());
+                let variaciontemperatura = Number($("#variaciontemperatura").val());
+                let deformacionlineal = coeficiente_expasion_termica * longitud_inicial * variaciontemperatura;
+                $("#resultado_deformacionlineal").text(deformacionlineal.toFixed(4));
+            }
+            else {
+                alert("el campo longitud inicial debe ser ingresado");
+            }
+
         }
         function DilatacionLineal_LongitudFinalPorDeformacionLineal() {
             let longitud_inicial = Number($("#longitudinicial").val());
-            let coeficiente_expasion_termica = Number($("#cofexpansiontermica").val());
-            let variaciontemperatura = Number($("#variaciontemperatura").val());
-            let longitudfinal = longitud_inicial * (1 + (coeficiente_expasion_termica) * (variaciontemperatura));
-            $("#resultado_deformacionlineal").text(longitudfinal.toFixed(4));
+            if (longitud_inicial > 0) {
+                let coeficiente_expasion_termica = Number($("#cofexpansiontermica").val());
+                let variaciontemperatura = Number($("#variaciontemperatura").val());
+                let longitudfinal = longitud_inicial * (1 + (coeficiente_expasion_termica) * (variaciontemperatura));
+                $("#resultado_deformacionlineal").text(longitudfinal.toFixed(4));
+            } else {
+                alert("el campo longitud inicial debe ser ingresado");
+            }
+        }
+        function DilatacionSuperficial() {
+            let areainicial = Number($("#areainicial").val());
+            if (areainicial > 0) {
+                let coeficiente_expasion_termica = Number($("#cofexpansiontermica").val());
+                let variaciontemperatura = Number($("#variaciontemperatura").val());
+                let deformacionsuperficialfinal = 2 * coeficiente_expasion_termica * areainicial * variaciontemperatura;
+                $("#resultado_deformacionlineal").text(deformacionsuperficialfinal.toFixed(4));
+            } else {
+                alert("el campo volumen inicial debe ser ingresado");
+            }
+        }
+        function DilatacionVolumetrica_volumenfinaldilatado() {
+            let volumeninicial = Number($("#volumeninicial").val());
+            if (volumeninicial > 0) {
+                let coeficiente_expasion_termica = Number($("#cofexpansiontermica").val());
+                let variaciontemperatura = Number($("#variaciontemperatura").val());
+                let volumenfinaldilatado = volumeninicial * (1 + 3 * coeficiente_expasion_termica * variaciontemperatura);
+                let esliquido = $("#coeficiente_es_liquido").val();
+                if (esliquido == "True") {
+                    volumenfinaldilatado = volumeninicial * coeficiente_expasion_termica * variaciontemperatura;
+                }
+                $("#resultado_deformacionlineal").text(volumenfinaldilatado.toFixed(4));
+            } else {
+                alert("el campo volumen inicial debe ser ingresado");
+            }
+        }
+        function area_cuadrado() {
+            let lado = Number($("#ladoCuadrado").val());
+            let area = lado * lado;
+            $("#resultadoArea").text(area.toFixed(4));
+        }
+        function area_rectangulo() {
+            let base = Number($("#base").val());
+            let altura = Number($("#altura").val());
+            let area = base * altura;
+            $("#resultadoArea").text(area.toFixed(4));
+        }
+        function area_triangulo() {
+            let base = Number($("#base").val());
+            let altura = Number($("#altura").val());
+            let area = (base * altura) / 2;
+            $("#resultadoArea").text(area.toFixed(4));
+        }
+        function area_circulo() {
+            let radio = Number($("#radio_area").val());
+            let area = 1/2 * 3.1416 * (radio * radio);
+            $("#resultadoArea").text(area.toFixed(4));
+        }
+        function mostrarAreaSeleccionada() {
+            let tipoarea = Number($("#tipoarea").val());
+            switch (tipoarea) {
+                case 1: //mostrar cuadrado
+                    $("#div_areacuadrado").show();
+                    $("#div_arearectangulo").hide();
+                    $("#div_areacirculo").hide();
+                    break;
+                case 2: //mostrar rectangulo
+                    $("#div_areacuadrado").hide();
+                    $("#div_arearectangulo").show();
+                    $("#tittle_rectangulo_triangulo").text("Area del rectangulo");
+                    $("#div_areacirculo").hide();
+                    break;
+                case 3: //mostrar triangulo(cambiar titulo)
+                    $("#div_areacuadrado").hide();
+                    $("#div_arearectangulo").show();
+                    $("#tittle_rectangulo_triangulo").text("Area del triangulo");
+                    $("#div_areacirculo").hide();
+                    break;
+                case 4: //mostrar circulo
+                    $("#div_areacuadrado").hide();
+                    $("#div_arearectangulo").hide();
+                    $("#div_areacirculo").show();
+                    break;
+            }
+        }
+        function calculararea() {
+            let tipoarea = Number($("#tipoarea").val());
+            switch (tipoarea) {
+                case 1:
+                    area_cuadrado();
+                    break;
+                case 2:
+                    area_rectangulo();
+                    break;
+                case 3:
+                    area_triangulo();
+                    break;
+                case 4:
+                    area_circulo(); 
+                    break;
+            }
         }
     </script>
 </body>
