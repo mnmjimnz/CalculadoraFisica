@@ -21,6 +21,33 @@
             .notification.show {
                 display: block;
             }
+/*estilo para botones agrupados*/
+        .btn-group-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            width: fit-content;
+        }
+
+            .btn-group-wrap .btn {
+                border-radius: 0;
+                margin: -1px; /* quita el espacio visual entre botones */
+            }
+
+                .btn-group-wrap .btn:nth-child(1) {
+                    border-top-left-radius: 0.375rem;
+                }
+
+                .btn-group-wrap .btn:nth-child(2) {
+                    border-top-right-radius: 0.375rem;
+                }
+
+                .btn-group-wrap .btn:nth-child(3) {
+                    border-bottom-left-radius: 0.375rem;
+                }
+
+                .btn-group-wrap .btn:nth-child(4) {
+                    border-bottom-right-radius: 0.375rem;
+                }
     </style>
 </head>
 
@@ -356,7 +383,7 @@
                         <p id="resultado_deformacionlineal"></p>
                     </div>
                     <div class="col-sm-12">
-                        <div class="btn-group" role="group" aria-label="Grupo de botones">
+                        <div class="btn-group-wrap rounded overflow-hidden" role="group" aria-label="Grupo de botones">
                             <button type="button" class="btn btn-info"
                                     onclick="DilatacionLineal_DeformacionLineal()">
                                 Calcular Deformacion Lineal
@@ -618,7 +645,7 @@
         }
         function area_circulo() {
             let radio = Number($("#radio_area").val());
-            let area = 1/2 * 3.1416 * (radio * radio);
+            let area = 1 / 2 * 3.1416 * (radio * radio);
             $("#resultadoArea").text(area.toFixed(4));
         }
         function mostrarAreaSeleccionada() {
@@ -661,7 +688,7 @@
                     area_triangulo();
                     break;
                 case 4:
-                    area_circulo(); 
+                    area_circulo();
                     break;
             }
         }
